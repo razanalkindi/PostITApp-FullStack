@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const getPosts=createAsyncThunk("posts/getPosts",async()=>{
     try{
-        const response=await axios.get("http://localhost:5000/getPosts");
+        const response=await axios.get("http://https://postitapp-fullstack.onrender.com/getPosts");
         return response.data.posts;
     }
     catch(error){
@@ -13,7 +13,7 @@ export const getPosts=createAsyncThunk("posts/getPosts",async()=>{
 
 export const savePost=createAsyncThunk("posts/savePost",async(pdata)=>{
     try{
-        const response=await axios.post("http://localhost:5000/savePost",pdata);
+        const response=await axios.post("https://postitapp-fullstack.onrender.com/savePost",pdata);
         return response.data.message;
     }
     catch(error){
@@ -102,4 +102,5 @@ export const PostSlice=createSlice({
         })
     }
 });
+
 export default PostSlice.reducer;
